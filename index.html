@@ -16,7 +16,7 @@
         /* background-position: center; */
       }
 
-  .info {
+      .info {
   color: white;
   display: block;
   margin: auto;
@@ -27,15 +27,35 @@
   background-color: rgba(0, 0, 0, 0.459);
   background-image: linear-gradient(to right, #f00, #00f);
   background-size: 200% 100%;
-  transition: background-position 0.5s ease-in-out, color 0.5s ease-in-out;
+  animation: gradient-animation 5s ease-in-out infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
 }
 
 .info:hover {
-  /* color: black; */
-  background-position: right;
+  color: black;
 }
 
+  .center {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 5vw;
+  /* height: 44.5vw; */
+  /* padding-top: 50%; */
+  /* align-items: center; */
 
+}
 .animation {
 position: relative;
 display: inline-block;
@@ -64,34 +84,6 @@ transform: translateY(0);
 transform: scale(1.3);
 box-shadow: 0 0 20px rgba(0,0,0,0.2);
 }
-.center {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    /* background-color: #1f1f1f; */
-    color: #ffffff;
-}
-
-.fade-in  {
-    background-color: rgba(0, 0, 0, 0.596);
-    color:rgb(255, 255, 255) ;
-    font-weight: 900;
-    font-size: 1.5vw;
-    opacity: 0;
-    animation: fadeIn 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-    transform: translateY(50px) rotate(-10deg);
-    letter-spacing: 0.05em;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(50px) rotate(-10deg); }
-    to { opacity: 1; transform: translateY(0) rotate(0); }
-}
-
-
-
 </style>
 <body >
   <nav class="navbar bg-dark" data-bs-theme="dark">
@@ -123,14 +115,10 @@ box-shadow: 0 0 20px rgba(0,0,0,0.2);
       </div>
       </div>
     </div>
-   <div class="center">
-    <p class="fade-in blink">This website has been created by joint efforts of Tushar Ghosh, Vedant Jain and Zaid Alam.</p>
-    <p class="fade-in blink">It is a collection of various links and details that will help a person navigate in the college.</p>
-    <p class="fade-in blink">It has been our first project and we learned a lot in these 48 hours from team skills to various different technologies.</p>
-    <p class="fade-in blink">For this, we would like to thank Hackbyte.</p>
-</div>
-
-
+    <div class="center">
+      <a href="info.html"><img src="teamlogo.png" class="animation rounded float-start" alt="..."></a>
+      
+    </div>    
     
   </body>
   </html>
